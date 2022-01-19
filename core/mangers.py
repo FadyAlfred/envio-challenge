@@ -30,7 +30,7 @@ class ReadingManager(models.Manager):
                 FROM core_reading 
                 WHERE timestamp >= grid.timestamp 
                 AND timestamp <  grid.timestamp + interval '{interval} min'                            
-            ) AVG
+            ) avg
             WHERE value_avg IS NOT NULL;'''
         )
         records = dict_fetchall(cursor)
